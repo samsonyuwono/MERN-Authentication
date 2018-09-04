@@ -4,9 +4,10 @@ var favicon = require("serve-favicon");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 
-var book = require("./routes/book");
+var book = require("./routes/book"); // change this
 var app = express();
 
+var auth = require("./routes/auth");
 var mongoose = require("mongoose");
 mongoose.Promise = require("bluebird");
 mongoose
@@ -22,7 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: "false" }));
 app.use(express.static(path.join(__dirname, "build")));
 
-app.use("/api/book", book);
+app.use("/api/book", book); // change this
+app.use("/api/auth", auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
