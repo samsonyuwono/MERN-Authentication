@@ -20,7 +20,6 @@ getToken = function(headers) {
 };
 
 /* GET ALL BOOKS */
-//change this
 router.get("/", passport.authenticate("jwt", { session: false }), function(
   req,
   res
@@ -37,7 +36,6 @@ router.get("/", passport.authenticate("jwt", { session: false }), function(
 });
 
 /* SAVE BOOK */
-//change this
 router.post("/", passport.authenticate("jwt", { session: false }), function(
   req,
   res
